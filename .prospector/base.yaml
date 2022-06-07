@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2022 Association Prologin <association@prologin.org>
+# Copyright (c) 2022 Marc 'risson' Schmitt <marc.schmitt@prologin.org>
+
+inherits:
+  - default
+
+test-warnings: true
+
+stricteness: veryhigh
+
+uses:
+  - django
+
+pep8:
+  full: true
+  options:
+    max-line-length: 88
+  uses:
+    - django

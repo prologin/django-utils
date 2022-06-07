@@ -1,0 +1,5 @@
+---
+prelude: >
+  This is django-utils first release. It contains a bunch of tools to help
+  setup a Django project, without having to repeat the same boilerplate every
+  time.

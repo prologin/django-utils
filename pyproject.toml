@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2022 Association Prologin <association@prologin.org>
+# Copyright (c) 2022 Marc 'risson' Schmitt <marc.schmitt@prologin.org>
+
+[tool.poetry]
+name = "prologin-django-utils"
+version = "0.0.1"
+description = "Utils for Prologin's Django applications"
+authors = ["Association Prologin <association@prologin.org>", "Marc 'risson' Schmitt <marc.schmitt@prologin.org>"]
+license = "GPL-3.0-or-later"
+repository = "https://gitlab.com/prologin/tech/packages/django-utils.git"
+packages = [
+  { include = "django_utils" },
+]
+
+[[tool.poetry.source]]
+name = "gitlab-prologin"
+url = "https://gitlab.com/api/v4/groups/prologin/-/packages/pypi/simple"
+secondary = true
+
+[tool.poetry.dependencies]
+python = "^3.10"
+social-auth-core = {extras = ["openidconnect"], version = ">=3"}
+
+[tool.poetry.dev-dependencies]
+black = "*"
+isort = "*"
+pre-commit = "*"
+prospector = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

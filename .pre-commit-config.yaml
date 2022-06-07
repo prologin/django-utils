@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2022 Association Prologin <association@prologin.org>
+# Copyright (c) 2022 Marc 'risson' Schmitt <marc.schmitt@prologin.org>
+
+repos:
+  - repo: https://github.com/python/black
+    rev: 21.10b0
+    hooks:
+    - id: black
+      language_version: python3.9
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+    - id: isort
+      name: isort
