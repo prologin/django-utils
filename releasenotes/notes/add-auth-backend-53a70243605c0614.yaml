@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add multiple authentication backends to authenticate with social_auth and
+    Prologin's Keycloak.
