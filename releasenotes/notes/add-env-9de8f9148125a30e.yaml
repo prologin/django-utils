@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add `env` module to easily get settings from environment.
