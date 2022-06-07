@@ -1,0 +1,9 @@
+---
+features:
+  - Add XRealIPMiddleware middleware.
+  - |
+    Add ProbesMiddleware middleware. Set `settings.PROBES_IPS` to a list of IP
+    ranges to allow to query /readiness and /healthz:
+    ```
+    PROBES_IPS = env.get_list("DJANGO_PROBES_IP", ["0.0.0.0/0"])
+    ```

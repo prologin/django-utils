@@ -20,6 +20,7 @@ secondary = true
 
 [tool.poetry.dependencies]
 python = "^3.10"
+django = ">=3"
 social-auth-core = {extras = ["openidconnect"], version = ">=3"}
 
 [tool.poetry.dev-dependencies]
