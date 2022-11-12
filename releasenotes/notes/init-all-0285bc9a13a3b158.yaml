@@ -1,0 +1,16 @@
+---
+features:
+  - Add Prologin auth backend for mozilla_django_oidc.
+  - Add Celery app and settings boilerplate.
+  - Add django-rest-framework auth, settings, and other boilerplate.
+  - Add auth settings boilerplate.
+  - Add cache settings boilerplate.
+  - Add common settings boilerplate.
+  - Add database settings boilerplate.
+  - Add debug settings boilerplate.
+  - Add logging settings boilerplate.
+  - Add urlpatterns boilerplate.
+upgrade:
+  - |
+    The best way to use this package is to follow
+    [django-template](https://gitlab.com/prologin/tech/tools/django-template).

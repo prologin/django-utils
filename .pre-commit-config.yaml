@@ -4,12 +4,14 @@
 
 repos:
   - repo: https://github.com/python/black
-    rev: 21.10b0
+    rev: 22.10.0
     hooks:
     - id: black
-      language_version: python3.9
+      language_version: python3.10
+      args: ["--config=pyproject.toml"]
   - repo: https://github.com/pycqa/isort
     rev: 5.10.1
     hooks:
     - id: isort
       name: isort
+      args: ["--settings-path=pyproject.toml"]

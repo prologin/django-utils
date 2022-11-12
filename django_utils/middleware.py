@@ -29,7 +29,9 @@ class XRealIPMiddleware(MiddlewareMixin):
 
     def process_request(self, request):
         try:
-            real_ip = ipaddress.ip_address(request.META.get(self.REAL_IP_HEADER))
+            real_ip = ipaddress.ip_address(
+                request.META.get(self.REAL_IP_HEADER)
+            )
         except ValueError:
             return
         request.META["REMOTE_ADDR"] = str(real_ip)
@@ -49,7 +51,9 @@ class ProbesMiddleware(MiddlewareMixin):
         return False
 
     def process_request(self, request):
-        if not self.is_method_allowed(request) or not self.is_ip_allowed(request):
+        if not self.is_method_allowed(request) or not self.is_ip_allowed(
+            request
+        ):
             return None
 
         handler = self.paths.get(request.path, "_default_handler")

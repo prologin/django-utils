@@ -35,7 +35,11 @@ def ignore_missing():
 
 def _get_raw_value(name, default=NO_DEFAULT):
     alt_name = f"{name}_FILE"
-    if name not in environ and alt_name not in environ and default is NO_DEFAULT:
+    if (
+        name not in environ
+        and alt_name not in environ
+        and default is NO_DEFAULT
+    ):
         if ignore_missing():
             return MISSING_ENV
         raise MissingEnvVariable(name)

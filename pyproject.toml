@@ -20,15 +20,42 @@ secondary = true
 
 [tool.poetry.dependencies]
 python = "^3.10"
-django = ">=3"
-social-auth-core = {extras = ["openidconnect"], version = ">=3"}
+boto3 = "^1.24"
+celery = { version = "^5.2", optional = true }
+collectfast = "*"
+django = "^4.0"
+django-celery-beat = { version = "^2.4", optional = true }
+django-debug-toolbar = "*"
+django-mail-panel = "^4.0"
+django-prometheus = "^2.2"
+django-redis = { version = "^5", optional = true }
+django-rest-knox = { version = "^4.2", optional = true }
+django-storages = "^1.12"
+django-structlog = { version = "^4.0", extras = [ "celery" ] }
+djangorestframework = { version = "^3.13", optional = true }
+drf-spectacular = { version = "*", extras = [ "offline" ], optional = true }
+mozilla-django-oidc = { version = "^2.0", optional = true }
+
+[tool.poetry.extras]
+auth = ["mozilla-django-oidc"]
+celery_extra = ["celery", "django-celery-beat"]
+drf = ["django-rest-knox", "djangorestframework", "drf-spectacular"]
+redis = ["django-redis"]
 
 [tool.poetry.dev-dependencies]
 black = "*"
 isort = "*"
 pre-commit = "*"
-prospector = "*"
+prospector = {extras = ["with_everything"], version = "*"}
+renogin = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79

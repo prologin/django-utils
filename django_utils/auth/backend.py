@@ -2,19 +2,43 @@
 # Copyright (c) 2022 Association Prologin <association@prologin.org>
 # Copyright (c) 2022 Marc 'risson' Schmitt <marc.schmitt@prologin.org>
 
-from social_core.backends.open_id_connect import OpenIdConnectAuth
+import logging
+
+from mozilla_django_oidc.auth import OIDCAuthenticationBackend
+
+_logger = logging.getLogger(__name__)
 
 
-class ProloginSiteOpenIdConnect(OpenIdConnectAuth):
-    name = "prologin-site"
-    OIDC_ENDPOINT = "https://prologin.org/openid"
+class ProloginOIDCAB(OIDCAuthenticationBackend):
+    def get_username(self, claims):
+        if "preferred_username" in claims:
+            return claims.get("preferred_username")
+        return claims.get("sub")
 
+    def get_name(self, claims):
+        if "name" in claims:
+            return claims.get("name")
+        return self.get_username(claims)
 
-class ProloginSsoStaffOpenIdConnect(OpenIdConnectAuth):
-    name = "prologin-sso-staff"
-    OIDC_ENDPOINT = "https://sso.prologin.org/auth/realms/staff"
+    def create_user(self, claims):
+        email = claims.get("email")
+        username = self.get_username(claims)
 
+        _logger.debug("Creating user %s", username)
 
-class ProloginSsoPieOpenIdConnect(OpenIdConnectAuth):
-    name = "prologin-sso-pie"
-    OIDC_ENDPOINT = "https://sso.prologin.org/auth/realms/pie"
+        name = self.get_name(claims)
+        return self.UserModel.objects.create_user(
+            username, email=email, first_name=name
+        )
+
+    def update_user(self, user, claims):
+        username = self.get_username(claims)
+        name = self.get_name(claims)
+
+        _logger.debug("Updating user %s", username)
+
+        user.username = username
+        user.first_name = name
+
+        user.save()
+        return user

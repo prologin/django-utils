@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Remove social_auth backends.
