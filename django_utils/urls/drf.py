@@ -18,6 +18,8 @@ from django_utils.drf.views import WhoAmIView
 def urlpatterns(apps_with_api=None, with_auth: bool = False):
     if apps_with_api is None:
         apps_with_api = []
+
+
     @api_view(["GET"])
     def api_root(request, format=None):
         data = {}
@@ -26,6 +28,7 @@ def urlpatterns(apps_with_api=None, with_auth: bool = False):
                 f"{app}-api-root", request=request, format=format
             )
         return Response(data)
+
 
     urls = [
         path("rest/", api_root),

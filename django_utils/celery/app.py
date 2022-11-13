@@ -3,7 +3,6 @@
 # Copyright (c) 2022 Marc 'risson' Schmitt <marc.schmitt@prologin.org>
 
 import logging
-import os
 
 import structlog
 from celery import Celery, signals

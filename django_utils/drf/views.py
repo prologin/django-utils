@@ -3,7 +3,7 @@
 # Copyright (c) 2022 Marc 'risson' Schmitt <marc.schmitt@prologin.org>
 
 from knox.settings import knox_settings
-from rest_framework import permissions, response, serializers, views
+from rest_framework import permissions, response, views
 
 from .serializers import UserSerializer
 
