@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add `apps_with_api` argument to `urls.drf.urlpatterns` to autogenerate
+    URLs for apps.
