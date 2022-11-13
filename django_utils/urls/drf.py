@@ -49,7 +49,7 @@ def urlpatterns(apps_with_api=None, with_auth: bool = False):
             SpectacularRedocView.as_view(url_name="schema"),
             name="schema-redoc",
         ),
-    ] + [path(f"api/{app}/", include(f"{app}.api")) for app in apps_with_api]
+    ] + [path(f"rest/{app}/", include(f"{app}.api")) for app in apps_with_api]
 
     if with_auth:
         urls += [

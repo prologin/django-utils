@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    `urls.drf.urlpatterns`: `apps_with_api` path prefix has been changed from
+    `/api` to `/rest`.
