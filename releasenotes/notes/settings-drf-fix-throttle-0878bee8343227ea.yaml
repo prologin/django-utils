@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix `settings.drf.rest_framework` not using arguments for throttling
+    configuration.

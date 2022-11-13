@@ -18,7 +18,10 @@ def rest_framework(
             "rest_framework.throttling.AnonRateThrottle",
             "rest_framework.throttling.UserRateThrottle",
         ),
-        "DEFAULT_THROTTLE_RATES": {"anon": "100/hour", "user": "1000/hour"},
+        "DEFAULT_THROTTLE_RATES": {
+            "anon": f"{throttle_rate_anon}/hour",
+            "user": f"{throttle_rate_user}/hour",
+        },
         "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     }
 
