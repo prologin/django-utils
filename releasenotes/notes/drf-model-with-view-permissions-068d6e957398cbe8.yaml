@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add `drf.permissions.DjangoModelWithViewPermissions` permission class that
+    adds a permission check on `GET` requests for `app.view_model` permission
+    to the drf-included DjangoModelPermissions class.
