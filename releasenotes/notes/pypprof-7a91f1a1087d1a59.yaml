@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Add `pprof` extra. This comes with the addition of a `with_pprof`
+    argument to `settings.common.installed_apps` to add
+    [`django_pypprof`](https://gitlab.com/prologin/tech/packages/django-pypprof)
+    to installed apps.

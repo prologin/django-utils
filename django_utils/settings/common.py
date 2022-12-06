@@ -52,7 +52,10 @@ TEMPLATES = [
 
 
 def installed_apps(
-    with_auth: bool = False, with_celery: bool = False, with_drf: bool = False
+    with_auth: bool = False,
+    with_celery: bool = False,
+    with_drf: bool = False,
+    with_pprof: bool = False,
 ):
     INSTALLED_APPS = [
         "django.contrib.admin",
@@ -88,6 +91,11 @@ def installed_apps(
         INSTALLED_APPS += [
             "debug_toolbar",
             "mail_panel",
+        ]
+
+    if with_pprof:
+        INSTALLED_APPS += [
+            "django_pypprof",
         ]
 
     return INSTALLED_APPS

@@ -28,6 +28,7 @@ django-celery-beat = { version = "^2.4", optional = true }
 django-debug-toolbar = "*"
 django-mail-panel = "^4.0"
 django-prometheus = "^2.2"
+django-pypprof = { version = "0.0.1", optional = true }
 django-redis = { version = "^5", optional = true }
 django-rest-knox = { version = "^4.2", optional = true }
 django-storages = "^1.12"
@@ -40,6 +41,7 @@ mozilla-django-oidc = { version = "^2.0", optional = true }
 auth = ["mozilla-django-oidc"]
 celery_extra = ["celery", "django-celery-beat"]
 drf = ["django-rest-knox", "djangorestframework", "drf-spectacular"]
+pprof = ["django-pypprof"]
 redis = ["django-redis"]
 
 [tool.poetry.dev-dependencies]
