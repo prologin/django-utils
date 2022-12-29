@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    `settings.logging`: `parso.python.diff` log level has been set to `INFO` to
+    avoid spamming in IPython.

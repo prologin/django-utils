@@ -48,6 +48,11 @@ LOGGING = {
             "level": "INFO",
             "propagate": False,
         },
+        "parso.python.diff": {
+            "handlers": [],
+            "level": "INFO",
+            "propagate": False,
+        }
     },
 }
 
