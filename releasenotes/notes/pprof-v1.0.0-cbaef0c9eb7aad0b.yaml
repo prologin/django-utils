@@ -1,0 +1,4 @@
+---
+other:
+  - |
+    `django-pypprof` has been update to `1.0.0`. This release is a no-op.
