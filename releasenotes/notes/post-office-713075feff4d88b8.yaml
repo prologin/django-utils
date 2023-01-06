@@ -1,0 +1,11 @@
+---
+features:
+  - |
+    Add `post_office` to `settings.common`. Previous email settings can still
+    be used. A scheduled task `send-queued-mail` has also been added to Celery
+    app configuration to allow asynchronous email sending.
+upgrade:
+  - |
+    `settings.common.DEFAULT_DOMAIN` now defaults to `app.localhost` instead
+    of `localhost` to allow `post_office` to send mails from the automatically
+    configured `DJANGO_DEFAULT_FROM_EMAIL` (now `noreply@app.localhost`).

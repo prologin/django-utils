@@ -19,6 +19,16 @@ app.autodiscover_tasks()
 
 app.conf.beat_scheduler = "django_celery_beat.schedulers.DatabaseScheduler"
 
+app.conf.beat_schedule = {
+    "send-queued-mail": {
+        "task": "post_office.tasks.send_queued_mail",
+        "schedule": 600.0,
+        "kwargs": {
+            "days": 365,
+        },
+    },
+}
+
 
 @signals.setup_logging.connect
 def receiver_setup_logging(

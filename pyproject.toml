@@ -27,6 +27,7 @@ django = "^4.0"
 django-celery-beat = { version = "^2.4"}
 django-debug-toolbar = "*"
 django-mail-panel = "^4.0"
+django-post-office = "^3.6"
 django-prometheus = "^2.2"
 django-pypprof = { version = "1.0.0", optional = true }
 django-redis = { version = "^5" }

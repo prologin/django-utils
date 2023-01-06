@@ -11,7 +11,7 @@ SECRET_KEY = env.get_secret("DJANGO_SECRET_KEY")
 
 PROBES_IPS = env.get_list("DJANGO_PROBES_IP", ["0.0.0.0/0"])
 ALLOWED_HOSTS = env.get_list("DJANGO_ALLOWED_HOSTS", [])
-DEFAULT_DOMAIN = ALLOWED_HOSTS[0] if ALLOWED_HOSTS else "localhost"
+DEFAULT_DOMAIN = ALLOWED_HOSTS[0] if ALLOWED_HOSTS else "app.localhost"
 
 # A list of the emails who get error notifications.
 ADMINS = [(mail, mail) for mail in env.get_list("DJANGO_ADMINS", [])]
@@ -63,6 +63,7 @@ def installed_apps(with_auth: bool = False, with_pprof: bool = False):
         "django.contrib.staticfiles",
         "django_prometheus",
         "django_celery_beat",
+        "post_office",
         "drf_spectacular",
         "drf_spectacular_sidecar",
         "rest_framework",
@@ -77,7 +78,6 @@ def installed_apps(with_auth: bool = False, with_pprof: bool = False):
     if DEBUG:
         INSTALLED_APPS += [
             "debug_toolbar",
-            "mail_panel",
         ]
 
     if with_pprof:
@@ -183,9 +183,23 @@ DEFAULT_FROM_EMAIL = env.get_string(
     "DJANGO_DEFAULT_FROM_EMAIL", f"noreply@{DEFAULT_DOMAIN}"
 )
 
+EMAIL_BACKEND = "post_office.EmailBackend"
+POST_OFFICE = {
+    "CELERY_ENABLED": True,
+    "DEFAULT_PRIORITY": "now",
+    "MESSAGE_ID_ENABLED": True,
+    "MESSAGE_ID_FQDN": DEFAULT_DOMAIN,
+    "MAX_RETRIES": 3,
+    "LOG_LEVEL": 1 if not DEBUG else 2,
+}
 if DEBUG:
-    EMAIL_BACKEND = "mail_panel.backend.MailToolbarBackend"
+    POST_OFFICE["BACKENDS"] = {
+        "default": "django.core.mail.backends.console.EmailBackend",
+    }
 else:
+    POST_OFFICE["BACKENDS"] = {
+        "default": "django.core.mail.backends.smtp.EmailBackend",
+    }
     EMAIL_HOST = env.get_string("DJANGO_SMTP_HOSTNAME", "localhost")
     EMAIL_PORT = env.get_string("DJANGO_SMTP_PORT", 25)
     EMAIL_HOST_USER = env.get_string("DJANGO_SMTP_USER", "")
