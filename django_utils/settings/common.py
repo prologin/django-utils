@@ -51,12 +51,7 @@ TEMPLATES = [
 ]
 
 
-def installed_apps(
-    with_auth: bool = False,
-    with_celery: bool = False,
-    with_drf: bool = False,
-    with_pprof: bool = False,
-):
+def installed_apps(with_auth: bool = False, with_pprof: bool = False):
     INSTALLED_APPS = [
         "django.contrib.admin",
         "django.contrib.auth",
@@ -67,20 +62,12 @@ def installed_apps(
         "collectfast",  # Must be loaded before staticfiles
         "django.contrib.staticfiles",
         "django_prometheus",
+        "django_celery_beat",
+        "drf_spectacular",
+        "drf_spectacular_sidecar",
+        "rest_framework",
+        "knox",
     ]
-
-    if with_celery:
-        INSTALLED_APPS += [
-            "django_celery_beat",
-        ]
-
-    if with_drf:
-        INSTALLED_APPS += [
-            "drf_spectacular",
-            "drf_spectacular_sidecar",
-            "rest_framework",
-            "knox",
-        ]
 
     if with_auth:
         INSTALLED_APPS += [

@@ -1,0 +1,6 @@
+---
+upgrade:
+  - |
+    `celery_extra`, `drf` and `redis` extras have been removed and are now
+    builtin. As such, `settings.common.installed_apps` no longer accepts
+    `with_celery`, `with_drf` and `with_pprof` arguments.
