@@ -48,6 +48,11 @@ LOGGING = {
             "level": "INFO",
             "propagate": False,
         },
+        "celery.beat": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
         "collectfast": {
             "handlers": ["console"],
             "level": "INFO",
@@ -60,6 +65,11 @@ LOGGING = {
         },
         "django.server": {
             "handlers": [],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "kombu.pidbox": {
+            "handlers": ["console"],
             "level": "INFO",
             "propagate": False,
         },
