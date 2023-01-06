@@ -239,11 +239,18 @@ AWS_S3_URL_PROTOCOL = (
     "https:" if env.get_bool("S3_SECURE_URLS", True) else "http:"
 )
 
-STATIC_URL = (
+AWS_S3_BASE_URL = (
     (f"{AWS_S3_URL_PROTOCOL}//")
     + (AWS_S3_CUSTOM_DOMAIN or f"localhost:8020/{AWS_STORAGE_BUCKET_NAME}")
-    + "/"
 )
 
-AWS_QUERYSTRING_AUTH = True
-AWS_S3_OBJECT_PARAMETERS = {"ACL": "public-read"}
+AWS_STATIC_LOCATION = "static"
+STATIC_URL = f"{AWS_S3_BASE_URL}/{AWS_STATIC_LOCATION}/"
+STATICFILES_STORAGE = "django_utils.storage.backends.StaticStorage"
+
+AWS_PUBLIC_MEDIA_LOCATION = "media/public"
+MEDIA_URL = f"{AWS_S3_BASE_URL}/{AWS_PUBLIC_MEDIA_LOCATION}/"
+DEFAULT_FILE_STORAGE = "django_utils.storage.backends.PublicMediaStorage"
+
+AWS_PRIVATE_MEDIA_LOCATION = "media/private"
+PRIVATE_FILE_STORAGE = "django_utils.storage.backends.PrivateMediaStorage"

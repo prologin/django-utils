@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Multiple storage backends have been added to `storage.backends`. They
+    allow to default sensible settings for multiple use cases: static files,
+    public media files and private media files.
+    `settings.common` has been updated to use those backends.

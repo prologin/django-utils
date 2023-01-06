@@ -4,7 +4,7 @@
 
 [tool.poetry]
 name = "prologin-django-utils"
-version = "0.2.0"
+version = "0.3.0"
 description = "Utils for Prologin's Django applications"
 authors = ["Association Prologin <association@prologin.org>", "Marc 'risson' Schmitt <marc.schmitt@prologin.org>"]
 license = "GPL-3.0-or-later"
