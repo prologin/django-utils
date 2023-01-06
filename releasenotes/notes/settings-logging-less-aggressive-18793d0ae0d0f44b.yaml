@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    `settings.logging`: multiple loggers have been set to log level `INFO` to
+    avoid spamming.

@@ -38,6 +38,21 @@ LOGGING = {
             "handlers": ["console"],
             "level": LOG_LEVEL,
         },
+        "boto3": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "botocore": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "collectfast": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
         "django": {
             "handlers": ["console"],
             "level": "INFO",
@@ -48,11 +63,26 @@ LOGGING = {
             "level": "INFO",
             "propagate": False,
         },
-        "parso.python.diff": {
-            "handlers": [],
+        "parso.cache": {
+            "handlers": ["console"],
             "level": "INFO",
             "propagate": False,
-        }
+        },
+        "parso.python.diff": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "s3transfer": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "urllib3": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
     },
 }
 
