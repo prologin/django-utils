@@ -1,0 +1,12 @@
+---
+upgrade:
+  - |
+    OIDC configuration environment variables have been renamed to avoid having
+    a `PROLOGIN_` prefix. Here is the list of changes:
+
+    * `PROLOGIN_OIDC_URL` -> `OIDC_OP_CONFIG_URL`
+    * `PROLOGIN_OIDC_TIMEOUT` -> `OIDC_TIMEOUT`
+    * `PROLOGIN_OIDC_CLIENT_ID` -> `OIDC_RP_CLIENT_ID`
+    * `PROLOGIN_OIDC_CLIENT_SECRET` -> `OIDC_RP_CLIENT_SECRET`
+
+    Their default values have not been changed.
