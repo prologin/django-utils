@@ -58,7 +58,7 @@ secret_detection:
   stage: security
   needs: []
 
-release:
+publish:
   stage: release
   variables:
     POETRY_HTTP_BASIC_GITLAB_USERNAME: "gitlab-ci-token"
