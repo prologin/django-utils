@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Roles are now synced upon authentification using ProloginOIDCAB.

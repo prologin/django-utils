@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Groups are now synced upon authentication using ProloginOIDCAB.
