@@ -1,0 +1,14 @@
+---
+features:
+  - |
+    Add helper to get auth headers for app.
+    To use add those environment variables:
+    OIDC_<app-name>_OP_CONFIG: Defaults to the one in settings
+
+    OIDC_<app-name>_RP_SCOPES: Scopes to request when authenticating to OP
+
+    OIDC_<app-name>_RP_CLIENT_ID: Client ID of the service you're authenticating to 
+    OIDC_<app-name>_M2M_USERNAME: Username to use to get an OIDC token
+    OIDC_<app-name>_M2M_PASSWORD: Password associated to the username
+
+    If calling `get_auth_headers_for_app` with `"app-name"` replace `<app-name>` with `APP_NAME`.

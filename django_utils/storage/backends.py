@@ -1,7 +1,6 @@
+from django.conf import settings
 from storages.backends.s3boto3 import S3Boto3Storage, S3ManifestStaticStorage
 from storages.utils import clean_name
-
-from django.conf import settings
 
 
 class BaseStorage(S3Boto3Storage):

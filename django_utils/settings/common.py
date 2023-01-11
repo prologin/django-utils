@@ -240,9 +240,8 @@ AWS_S3_URL_PROTOCOL = (
     "https:" if env.get_bool("S3_SECURE_URLS", True) else "http:"
 )
 
-AWS_S3_BASE_URL = (
-    (f"{AWS_S3_URL_PROTOCOL}//")
-    + (AWS_S3_CUSTOM_DOMAIN or f"localhost:8020/{AWS_STORAGE_BUCKET_NAME}")
+AWS_S3_BASE_URL = (f"{AWS_S3_URL_PROTOCOL}//") + (
+    AWS_S3_CUSTOM_DOMAIN or f"localhost:8020/{AWS_STORAGE_BUCKET_NAME}"
 )
 
 AWS_STATIC_LOCATION = "static"

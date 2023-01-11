@@ -4,9 +4,9 @@
 
 import logging
 
-from mozilla_django_oidc.auth import OIDCAuthenticationBackend
-from django.db import transaction
 from django.contrib.auth.models import Group
+from django.db import transaction
+from mozilla_django_oidc.auth import OIDCAuthenticationBackend
 
 _logger = logging.getLogger(__name__)
 
@@ -36,11 +36,11 @@ class ProloginOIDCAB(OIDCAuthenticationBackend):
         user = self.UserModel.objects.create_user(
             username, email=email, first_name=name
         )
-        
+
         self.update_groups(user, claims)
-        
+
         self.set_permissions(user, claims)
-        
+
         return user
 
     def update_user(self, user, claims):
@@ -52,12 +52,12 @@ class ProloginOIDCAB(OIDCAuthenticationBackend):
         user.username = username
         user.first_name = name
 
-        self.set_permissions(user, claims, save=False) 
-        
+        self.set_permissions(user, claims, save=False)
+
         user.save()
-        
+
         self.update_groups(user, claims)
-        
+
         return user
 
     def update_groups(self, user, claims):
