@@ -7,6 +7,7 @@ import logging
 from django.contrib.auth.models import Group
 from django.db import transaction
 from mozilla_django_oidc.auth import OIDCAuthenticationBackend
+from mozilla_django_oidc.utils import import_from_settings
 
 _logger = logging.getLogger(__name__)
 
@@ -31,11 +32,17 @@ class ProloginOIDCAB(OIDCAuthenticationBackend):
         username = self.get_username(claims)
 
         _logger.debug("Creating user %s", username)
-
-        name = self.get_name(claims)
-        user = self.UserModel.objects.create_user(
-            username, email=email, first_name=name
+        OIDC_SYNC_GIVEN_NAME = import_from_settings(
+            "OIDC_SYNC_GIVEN_NAME", False
         )
+
+        if OIDC_SYNC_GIVEN_NAME:
+            name = self.get_name(claims)
+            user = self.UserModel.objects.create_user(
+                username, email=email, name=name
+            )
+        else:
+            user = self.UserModel.objects.create_user(username, email=email)
 
         self.update_groups(user, claims)
 
@@ -45,12 +52,18 @@ class ProloginOIDCAB(OIDCAuthenticationBackend):
 
     def update_user(self, user, claims):
         username = self.get_username(claims)
-        name = self.get_name(claims)
+
+        OIDC_SYNC_GIVEN_NAME = import_from_settings(
+            "OIDC_SYNC_GIVEN_NAME", False
+        )
+        if OIDC_SYNC_GIVEN_NAME:
+            name = self.get_name(claims)
 
         _logger.debug("Updating user %s", username)
 
         user.username = username
-        user.first_name = name
+        if OIDC_SYNC_GIVEN_NAME:
+            user.first_name = name
 
         self.set_permissions(user, claims, save=False)
 
