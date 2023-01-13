@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Add Celery task to periodically remove the unreferenced files from
+    the S3 storage.
+    For the task to be scheduled by Celery, add `django_utils.storage` to your
+    `INSTALLED_APPS`. This is done by default if using
+    `django_utils.settings.common.installed_apps`
+    The default period is set to 7 days.

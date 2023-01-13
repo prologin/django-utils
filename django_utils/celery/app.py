@@ -27,6 +27,10 @@ app.conf.beat_schedule = {
             "days": 365,
         },
     },
+    "clear-unreferenced-files": {
+        "task": "django_utils.storage.tasks.clear_unreferenced_files",
+        "schedule": 60.0 * 60 * 24 * 7,  # 7 days
+    },
 }
 
 

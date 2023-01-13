@@ -68,6 +68,7 @@ def installed_apps(with_auth: bool = False, with_pprof: bool = False):
         "drf_spectacular_sidecar",
         "rest_framework",
         "knox",
+        "django_utils.storage",
     ]
 
     if with_auth:
