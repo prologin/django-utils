@@ -47,11 +47,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1673363027,
-        "narHash": "sha256-nuPLEsEUvERI+gwmqknerUVHhdzDiZHKZ18Ibkvo7VQ=",
+        "lastModified": 1673606088,
+        "narHash": "sha256-wdYD41UwNwPhTdMaG0AIe7fE1bAdyHe6bB4HLUqUvck=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d3b4150929d4fed7eb626695c4f78881cfcbeb9e",
+        "rev": "37b97ae3dd714de9a17923d004a2c5b5543dfa6d",
         "type": "github"
       },
       "original": {
@@ -118,11 +118,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1673308740,
-        "narHash": "sha256-8hoQog3AmlI7bM1MgnQ8RtuegR/eu7dckuk0fdtY/tw=",
+        "lastModified": 1673468458,
+        "narHash": "sha256-+Daxou39CypzELAq+483XbOV5mRRd5OSBp7+n0qJORQ=",
         "ref": "refs/heads/main",
-        "rev": "5d6757373cc5c0fb3321f4729c36371b21af7e67",
-        "revCount": 5,
+        "rev": "0b18cb535494e67eab5a66f095c4f84f1255b7e7",
+        "revCount": 6,
         "type": "git",
         "url": "https://gitlab.com/prologin/tech/tools/renogin.git"
       },
