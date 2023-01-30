@@ -229,9 +229,6 @@ COLLECTFAST_DEBUG = DEBUG
 
 COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
 AWS_ACCESS_KEY_ID = env.get_secret("S3_ACCESS_KEY")
 AWS_SECRET_ACCESS_KEY = env.get_secret("S3_SECRET_KEY")
 AWS_STORAGE_BUCKET_NAME = env.get_string("S3_BUCKET")
