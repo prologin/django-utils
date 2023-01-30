@@ -22,6 +22,9 @@ MANAGERS = [
 
 # Redirect plain HTTP requests to HTTPS.
 SECURE_SSL_REDIRECT = not DEBUG
+SECURE_REDIRECT_EXEMPT = env.get_list(
+    "DJANGO_SECURE_REDIRECT_EXEMPT", ["^metrics$"]
+)
 
 # Avoid transmitting the CSRF cookie over HTTP accidentally.
 CSRF_COOKIE_SECURE = not DEBUG

@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add `DJANGO_SECURE_REDIRECT_EXEMPT` setting.
