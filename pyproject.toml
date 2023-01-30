@@ -24,6 +24,7 @@ boto3 = "^1.24"
 celery = { version = "^5.2" }
 collectfast = "*"
 django = "^4.0"
+django-allow-cidr = "^0.6"
 django-celery-beat = { version = "^2.4"}
 django-debug-toolbar = "*"
 django-mail-panel = "^4.0"

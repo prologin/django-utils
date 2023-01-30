@@ -153,14 +153,14 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "bleach"
-version = "5.0.1"
+version = "6.0.0"
 description = "An easy safelist-based HTML-sanitizing tool."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "bleach-5.0.1-py3-none-any.whl", hash = "sha256:085f7f33c15bd408dd9b17a4ad77c577db66d76203e5984b1bd59baeee948b2a"},
-    {file = "bleach-5.0.1.tar.gz", hash = "sha256:0d03255c47eb9bd2f26aa9bb7f2107732e7e8fe195ca2f64709fcf3b0a4a085c"},
+    {file = "bleach-6.0.0-py3-none-any.whl", hash = "sha256:33c16e3353dbd13028ab4799a0f89a83f113405c766e9c122df8a06f5b85b3f4"},
+    {file = "bleach-6.0.0.tar.gz", hash = "sha256:1a1a85c1595e07d8db14c5f09f09e6433502c51c595970edc090551f0db99414"},
 ]
 
 [package.dependencies]
@@ -170,22 +170,21 @@ webencodings = "*"
 
 [package.extras]
 css = ["tinycss2 (>=1.1.0,<1.2)"]
-dev = ["Sphinx (==4.3.2)", "black (==22.3.0)", "build (==0.8.0)", "flake8 (==4.0.1)", "hashin (==0.17.0)", "mypy (==0.961)", "pip-tools (==6.6.2)", "pytest (==7.1.2)", "tox (==3.25.0)", "twine (==4.0.1)", "wheel (==0.37.1)"]
 
 [[package]]
 name = "boto3"
-version = "1.26.54"
+version = "1.26.59"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 3.7"
 files = [
-    {file = "boto3-1.26.54-py3-none-any.whl", hash = "sha256:c729bb0af76e85a2776b6bd3da8d9fa0f4b91b425eab51612aa53956f644ee23"},
-    {file = "boto3-1.26.54.tar.gz", hash = "sha256:4e876ba5d64928cde0c416dd844f04f22d6b73d14002bbc3ca55591f80f49927"},
+    {file = "boto3-1.26.59-py3-none-any.whl", hash = "sha256:34ee771a5cc84c16e75d4b9ef4672f51c2bafdce66ec457bbaac630b37d9cd5e"},
+    {file = "boto3-1.26.59.tar.gz", hash = "sha256:7d9cebb507fc96e6eb429621ccb2e731b75e7bbb8d6d9f0cf0c08089ee3c1ab7"},
 ]
 
 [package.dependencies]
-botocore = ">=1.29.54,<1.30.0"
+botocore = ">=1.29.59,<1.30.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.6.0,<0.7.0"
 
@@ -194,14 +193,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.29.54"
+version = "1.29.59"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
 python-versions = ">= 3.7"
 files = [
-    {file = "botocore-1.29.54-py3-none-any.whl", hash = "sha256:ca3ef7588daa664fe196d3234718db5f6b5dab961507500b4bb921e31133eea1"},
-    {file = "botocore-1.29.54.tar.gz", hash = "sha256:f2fe17ed6b8e163769a715f81cb6ce3d4628d172918de535256bdf34d29b704f"},
+    {file = "botocore-1.29.59-py3-none-any.whl", hash = "sha256:5533644ddefaccfaa98460a63eb73e61a46aad019771226d103b1054b0df6103"},
+    {file = "botocore-1.29.59.tar.gz", hash = "sha256:bc75d41c5eecf624a2f9875483135aa78088a50c8d29847793f92756697cfed5"},
 ]
 
 [package.dependencies]
@@ -677,6 +676,22 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-allow-cidr"
+version = "0.6.0"
+description = "A Django Middleware to enable use of CIDR IP ranges in ALLOWED_HOSTS."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-allow-cidr-0.6.0.tar.gz", hash = "sha256:24b71f70257e97bab9fdb5ad8342c96eeea1d45bc06a36332978574252219401"},
+    {file = "django_allow_cidr-0.6.0-py2.py3-none-any.whl", hash = "sha256:6709f4581dfd2a00476a134741a738a7f67714ec4f8596c55b22cf3b2ac5a12e"},
+]
+
+[package.dependencies]
+Django = ">=2.2"
+packaging = "*"
+
+[[package]]
 name = "django-celery-beat"
 version = "2.4.0"
 description = "Database-backed Periodic Tasks."
@@ -1141,14 +1156,14 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "identify"
-version = "2.5.13"
+version = "2.5.16"
 description = "File identification library for Python"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "identify-2.5.13-py2.py3-none-any.whl", hash = "sha256:8aa48ce56e38c28b6faa9f261075dea0a942dfbb42b341b4e711896cbb40f3f7"},
-    {file = "identify-2.5.13.tar.gz", hash = "sha256:abb546bca6f470228785338a01b539de8a85bbf46491250ae03363956d8ebb10"},
+    {file = "identify-2.5.16-py2.py3-none-any.whl", hash = "sha256:832832a58ecc1b8f33d5e8cb4f7d3db2f5c7fbe922dfee5f958b48fed691501a"},
+    {file = "identify-2.5.16.tar.gz", hash = "sha256:c47acedfe6495b1c603ed7e93469b26e839cab38db4155113f36f718f8b3dc47"},
 ]
 
 [package.extras]
@@ -1180,19 +1195,19 @@ files = [
 
 [[package]]
 name = "isort"
-version = "5.11.4"
+version = "5.12.0"
 description = "A Python utility / library to sort Python imports."
 category = "dev"
 optional = false
-python-versions = ">=3.7.0"
+python-versions = ">=3.8.0"
 files = [
-    {file = "isort-5.11.4-py3-none-any.whl", hash = "sha256:c033fd0edb91000a7f09527fe5c75321878f98322a77ddcc81adbd83724afb7b"},
-    {file = "isort-5.11.4.tar.gz", hash = "sha256:6db30c5ded9815d813932c04c2f85a360bcdd35fed496f4d8f35495ef0a261b6"},
+    {file = "isort-5.12.0-py3-none-any.whl", hash = "sha256:f84c2818376e66cf843d497486ea8fed8700b340f308f076c6fb1229dff318b6"},
+    {file = "isort-5.12.0.tar.gz", hash = "sha256:8bef7dde241278824a6d83f44a544709b065191b95b6e50894bdc722fcba0504"},
 ]
 
 [package.extras]
-colors = ["colorama (>=0.4.3,<0.5.0)"]
-pipfile-deprecated-finder = ["pipreqs", "requirementslib"]
+colors = ["colorama (>=0.4.3)"]
+pipfile-deprecated-finder = ["pip-shims (>=0.5.2)", "pipreqs", "requirementslib"]
 plugins = ["setuptools"]
 requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
@@ -1472,7 +1487,7 @@ setuptools = "*"
 name = "packaging"
 version = "23.0"
 description = "Core utilities for Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1482,14 +1497,14 @@ files = [
 
 [[package]]
 name = "pathspec"
-version = "0.10.3"
+version = "0.11.0"
 description = "Utility library for gitignore style pattern matching of file paths."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pathspec-0.10.3-py3-none-any.whl", hash = "sha256:3c95343af8b756205e2aba76e843ba9520a24dd84f68c22b9f93251507509dd6"},
-    {file = "pathspec-0.10.3.tar.gz", hash = "sha256:56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"},
+    {file = "pathspec-0.11.0-py3-none-any.whl", hash = "sha256:3a66eb970cbac598f9e5ccb5b2cf58930cd8e3ed86d393d541eaf2d8b1705229"},
+    {file = "pathspec-0.11.0.tar.gz", hash = "sha256:64d338d4e0914e91c1792321e6907b5a593f1ab1851de7fc269557a21b30ebbc"},
 ]
 
 [[package]]
@@ -1576,14 +1591,14 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.2.2)", "pytest (>=7.2)", "pytest-
 
 [[package]]
 name = "pre-commit"
-version = "2.21.0"
+version = "3.0.2"
 description = "A framework for managing and maintaining multi-language pre-commit hooks."
 category = "dev"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "pre_commit-2.21.0-py2.py3-none-any.whl", hash = "sha256:e2f91727039fc39a92f58a588a25b87f936de6567eed4f0e673e0507edc75bad"},
-    {file = "pre_commit-2.21.0.tar.gz", hash = "sha256:31ef31af7e474a8d8995027fefdfcf509b5c913ff31f2015b4ec4beb26a6f658"},
+    {file = "pre_commit-3.0.2-py2.py3-none-any.whl", hash = "sha256:f448d5224c70e196a6c6f87961d2333dfdc49988ebbf660477f9efe991c03597"},
+    {file = "pre_commit-3.0.2.tar.gz", hash = "sha256:aa97fa71e7ab48225538e1e91a6b26e483029e6de64824f04760c32557bc91d7"},
 ]
 
 [package.dependencies]
@@ -1595,14 +1610,14 @@ virtualenv = ">=20.10.0"
 
 [[package]]
 name = "prometheus-client"
-version = "0.15.0"
+version = "0.16.0"
 description = "Python client for the Prometheus monitoring system."
 category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "prometheus_client-0.15.0-py3-none-any.whl", hash = "sha256:db7c05cbd13a0f79975592d112320f2605a325969b270a94b71dcabc47b931d2"},
-    {file = "prometheus_client-0.15.0.tar.gz", hash = "sha256:be26aa452490cfcf6da953f9436e95a9f2b4d578ca80094b4458930e5f584ab1"},
+    {file = "prometheus_client-0.16.0-py3-none-any.whl", hash = "sha256:0836af6eb2c8f4fed712b2f279f6c0a8bbab29f9f4aa15276b91c7cb0d1616ab"},
+    {file = "prometheus_client-0.16.0.tar.gz", hash = "sha256:a03e35b359f14dd1630898543e2120addfdeacd1a6069c1367ae90fd93ad3f48"},
 ]
 
 [package.extras]
@@ -2111,14 +2126,14 @@ test = ["coverage (>=4.0,!=4.4)", "openstackdocstheme (>=2.2.1)", "python-subuni
 
 [[package]]
 name = "renogin"
-version = "1.0.1"
+version = "1.0.2"
 description = "Renogin is a wrapper around Reno with Markdown support"
 category = "dev"
 optional = false
-python-versions = ">=3.10,<4.0"
+python-versions = ">=3.7,<4"
 files = [
-    {file = "renogin-1.0.1-py3-none-any.whl", hash = "sha256:c832dd08a36699d1cb3dfc25f134bddd176d82f483ebba3cde4a0eee357febd6"},
-    {file = "renogin-1.0.1.tar.gz", hash = "sha256:4bad514e004c3354900c448682d3de89e010a8e5a0c3634b0c4d21876ef17f63"},
+    {file = "renogin-1.0.2-py3-none-any.whl", hash = "sha256:10e07b16302bf545ee6b5622c8b156259dcc1282940fd0918018b183f5bd7db1"},
+    {file = "renogin-1.0.2.tar.gz", hash = "sha256:51d3e8da5066f3ced9129b2b3c3304ee8bf803c2e98395edeb9960fd55b39272"},
 ]
 
 [package.dependencies]
@@ -2200,14 +2215,14 @@ yaml = ["pyyaml"]
 
 [[package]]
 name = "setuptools"
-version = "66.1.1"
+version = "67.0.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "setuptools-66.1.1-py3-none-any.whl", hash = "sha256:6f590d76b713d5de4e49fe4fbca24474469f53c83632d5d0fd056f7ff7e8112b"},
-    {file = "setuptools-66.1.1.tar.gz", hash = "sha256:ac4008d396bc9cd983ea483cb7139c0240a07bbc74ffb6232fceffedc6cf03a8"},
+    {file = "setuptools-67.0.0-py3-none-any.whl", hash = "sha256:9d790961ba6219e9ff7d9557622d2fe136816a264dd01d5997cfc057d804853d"},
+    {file = "setuptools-67.0.0.tar.gz", hash = "sha256:883131c5b6efa70b9101c7ef30b2b7b780a4283d5fc1616383cdf22c83cbefe6"},
 ]
 
 [package.extras]
@@ -2472,7 +2487,6 @@ category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "wcwidth-0.2.6-py2.py3-none-any.whl", hash = "sha256:795b138f6875577cd91bba52baf9e445cd5118fd32723b460e30a0af30ea230e"},
     {file = "wcwidth-0.2.6.tar.gz", hash = "sha256:a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"},
 ]
 
@@ -2604,4 +2618,4 @@ pprof = ["django-pypprof"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "4fbeeb4b05a7c545a91d2d3d285c0433875b0c101045ac88d9b5cd5e806457bf"
+content-hash = "1ca369a85315266852803e22af642a8b56a259e37c49279915e3aa95fc1ee8d7"

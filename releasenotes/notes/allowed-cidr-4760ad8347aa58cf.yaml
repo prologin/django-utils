@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add `DJANGO_ALLOWED_CIDR` setting (a list) to allow Django to be queried by
+    IP in addition to what is defined in `DJANGO_ALLOWED_HOSTS`. Useful for
+    monitoring purposes.

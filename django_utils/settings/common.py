@@ -12,6 +12,7 @@ SECRET_KEY = env.get_secret("DJANGO_SECRET_KEY")
 PROBES_IPS = env.get_list("DJANGO_PROBES_IP", ["0.0.0.0/0"])
 ALLOWED_HOSTS = env.get_list("DJANGO_ALLOWED_HOSTS", [])
 DEFAULT_DOMAIN = ALLOWED_HOSTS[0] if ALLOWED_HOSTS else "app.localhost"
+ALLOWED_CIDR_NETS = env.get_list("DJANGO_ALLOWED_CIDR", [])
 
 # A list of the emails who get error notifications.
 ADMINS = [(mail, mail) for mail in env.get_list("DJANGO_ADMINS", [])]
@@ -91,6 +92,7 @@ def installed_apps(with_auth: bool = False, with_pprof: bool = False):
 
 def middleware(with_auth: bool = False):
     MIDDLEWARE = [
+        "allow_cidr.middleware.AllowCIDRMiddleware",
         "django_utils.middleware.XRealIPMiddleware",
         "django_utils.middleware.ProbesMiddleware",
         "django_prometheus.middleware.PrometheusBeforeMiddleware",
