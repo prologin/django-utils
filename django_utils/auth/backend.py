@@ -39,7 +39,7 @@ class ProloginOIDCAB(OIDCAuthenticationBackend):
         if OIDC_SYNC_GIVEN_NAME:
             name = self.get_name(claims)
             user = self.UserModel.objects.create_user(
-                username, email=email, name=name
+                username, email=email, first_name=name
             )
         else:
             user = self.UserModel.objects.create_user(username, email=email)

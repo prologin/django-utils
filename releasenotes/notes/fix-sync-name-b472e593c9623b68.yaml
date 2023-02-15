@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix user name sync when OIDC_SYNC_GIVEN_NAME is True and user does not yet
+    exist.
