@@ -1,0 +1,4 @@
+---
+other:
+    - |
+      chore(deps): update pre-commit hook python/black to v23.12.1.
