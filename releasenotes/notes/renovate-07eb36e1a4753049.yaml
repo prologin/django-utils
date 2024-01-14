@@ -1,0 +1,4 @@
+---
+other:
+    - |
+      chore(deps): update pre-commit hook pycqa/isort to v5.13.2.
