@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Prior to this fix, the Prologin OIDC backend expected a "roles"
+    field in the callback payload, and failed in the set_permissions function
+    if this field was missing. This fixes sets the `is_superuser` and `is_staff`
+    to False if the field is missing.
