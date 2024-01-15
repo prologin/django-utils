@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix CI to use the correct poetry plugin at build time.
