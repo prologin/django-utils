@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Update version overriding package for CI
